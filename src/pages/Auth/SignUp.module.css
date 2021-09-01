@@ -1,0 +1,20 @@
+.wrapper {
+    background: url('../../assets/mobile/mobile-chat-bg.svg') no-repeat;
+    background-size: cover; 
+
+    @apply h-screen flex flex-col justify-center items-center p-6 ;
+}
+
+
+
+.profile {
+    @apply w-1/2 mt-6 z-0
+}
+
+.input {
+    @apply w-full flex flex-col items-center justify-around mb-2
+}
+
+.button {
+    @apply w-full flex flex-col items-center 
+}

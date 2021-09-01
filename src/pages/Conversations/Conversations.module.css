@@ -1,0 +1,21 @@
+.wrapper {
+    @apply h-screen w-full max-w-3xl bg-white md:rounded-tr-xl md:rounded-br-xl md:max-w-sm 
+}
+.header {
+    @apply flex items-center bg-blue-400 h-16 space-x-2 p-3 md:rounded-tr-xl
+}
+
+.conversations {
+    @apply p-3 flex flex-1 flex-col items-center w-full h-full
+}
+.list {
+    @apply space-y-4 w-full  flex flex-col items-center
+}
+
+.title {
+    @apply text-2xl font-semibold p-2 
+}
+
+.titleSection {
+    @apply w-full max-w-xs
+}

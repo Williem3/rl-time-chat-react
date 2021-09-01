@@ -1,0 +1,24 @@
+.submit {
+    @apply bg-green-400 py-1 px-16 font-normal subpixel-antialiased text-white shadow-lg rounded-md w-full max-w-xs;
+}
+
+.next {
+    @apply bg-yellow-600 py-1 px-16 font-normal subpixel-antialiased text-white shadow-lg rounded-md w-full max-w-xs;
+}
+
+.warning {
+    @apply bg-red-500 py-1 px-16 font-normal subpixel-antialiased text-white shadow-lg rounded-md w-full max-w-xs;
+}
+
+
+.next:active {
+    @apply transition ease-in-out duration-200 transform translate-y-1.5
+}
+
+.warning:active {
+    @apply transition ease-in-out duration-200 transform translate-y-1.5
+}
+
+.submit:active {
+    @apply transition ease-in-out duration-200 transform translate-y-1.5
+}

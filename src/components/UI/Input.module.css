@@ -1,0 +1,12 @@
+.input {
+    @apply px-3 shadow border-0 bg-gray-200 rounded-md w-full 
+}
+
+.label {
+    @apply text-left text-xs ml-1
+}
+
+.input:focus {
+    outline: 0;
+}
+

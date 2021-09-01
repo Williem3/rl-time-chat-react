@@ -1,0 +1,57 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    @apply flex 
+}
+.stage {
+    height: 100%;
+    width: 100%;;
+    background: #FFF6DD;
+}
+
+.wrapper {
+    background-image: url("/src/assets/mobile/mobile-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    transform: translateY(75px);
+    margin: none;
+    @apply flex flex-grow-0 flex-col p-6 justify-center
+}
+
+.image {
+    display: none;
+}
+
+
+
+@media  (min-width: 768px) {
+
+}
+
+
+
+@media (min-width: 1024px) {
+    .wrapper {
+        background: none;
+        height: unset;
+        @apply p-20
+    }
+
+    .stage {
+        width: 50vw;
+        @apply flex flex-col justify-center
+    }
+    .stageSide {
+        background: #FFE7A5;
+        height: 100%;
+        width: 50%;
+        @apply flex justify-end pt-24
+    }
+
+    .image {
+        display: initial;
+        width: 85%;
+    }
+}

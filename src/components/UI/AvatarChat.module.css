@@ -1,0 +1,7 @@
+.wrapper {
+    @apply relative min-w-max
+}
+
+.profilePicture {
+    @apply rounded-full w-10 h-10 
+}

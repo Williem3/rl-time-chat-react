@@ -1,0 +1,28 @@
+
+.slogan {
+    @apply text-5xl font-extrabold text-gray-600 mb-10;
+}
+
+.start {
+    @apply w-60
+}
+
+
+
+@media (min-width: 525px) {
+    .slogan {
+        @apply text-6xl
+    }
+}
+
+@media (min-width: 1024px) {
+    .slogan {
+        @apply text-7xl
+    }
+}
+
+@media (min-width: 1100px) {
+    .slogan {
+        @apply text-8xl
+    }
+}

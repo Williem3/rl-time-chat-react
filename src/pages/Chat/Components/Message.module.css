@@ -1,0 +1,7 @@
+.message {
+    @apply flex items-center w-full space-x-2 flex-grow-0 md:max-w-3xl
+}
+
+.ownerMessage {
+    @apply flex items-center justify-end w-full space-x-2 flex-grow-0 md:max-w-3xl
+}

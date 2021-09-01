@@ -1,0 +1,6 @@
+.field {
+    @apply  w-full max-h-14 pl-6 pr-10 pt-2 pb-2  border border-2 border-gray-400 rounded-lg text-left outline-none block break-words overflow-auto
+}
+.emoji {
+    @apply absolute right-16 top-9 pr-2
+}

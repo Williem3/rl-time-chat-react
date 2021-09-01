@@ -1,0 +1,19 @@
+.wrapper {
+    @apply relative mb-10 flex flex-col items-center flex-grow-0 flex-shrink 
+}
+
+.profile {
+    @apply mt-6 opacity-40 z-0
+}
+
+.profilePicture {
+    @apply mt-6 rounded-full w-24 h-24 
+}
+
+.fileUplaod {
+    @apply hidden
+}
+
+.uploadLabel {
+    @apply absolute top-12 z-10
+}

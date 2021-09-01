@@ -1,0 +1,11 @@
+.wrapper {
+    @apply bg-green-400 max-w-xs rounded-3xl p-2 pl-4 pr-4 h-full overflow-y-auto break-words shadow-sm
+}
+
+.ownerWrapper {
+    @apply bg-blue-400 max-w-xs rounded-3xl p-2 pr-4 pl-4  h-full break-words shadow-sm
+}
+
+.message {
+    @apply h-full
+}
