@@ -11,6 +11,9 @@ import SignUp from './pages/Auth/SignUp';
 import Conversations from './pages/Conversations/Conversations';
 import Chat from './pages/Chat/Chat';
 import AuthContext from './store/auth-context';
+import io from "socket.io-client";
+
+const socket = io.connect('/');
 
 function App() {
 
@@ -25,13 +28,15 @@ function App() {
           <Route exact path='/' component={LandingPage}>
           </Route>
 
-          <Route exact path='/signup' component={SignUp}>
+          <Route path='/signup'>
+            <SignUp socket={socket}/>
           </Route>
 
-          <Route exact path='/conversations' component={Conversations}>
+          <Route path='/conversations' component={Conversations}>
           </Route>
 
-          <Route exact path='/conversation/:id' component={Chat}>
+          <Route path='/conversation/:roomname/:username' >
+            <Chat socket={socket}/>
           </Route>
 
           {/* <Route path='*' component={LandingPage}>

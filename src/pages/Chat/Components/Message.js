@@ -1,56 +1,46 @@
 import classes from './Message.module.css';
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import AvatarChat from '../../../components/UI/AvatarChat';
 import ChatBubble from '../../../components/UI/ChatBubble';
 
-class Message extends Component {
-    constructor() {
-        super();
-        this.state = {
-            ownersMessage: false,
+const Message = (props) => {
+    const [ownersMessage, setOwnersMessage] = useState(false);
+
+    useEffect(() => {
+        if(props.userID === parseInt(localStorage.getItem('userID'))) {
+            console.log('working and is the users message');
+            setOwnersMessage(true);
         }
-    }
+    }, [ownersMessage])
 
-
-    componentDidMount() {
-        if (this.props.userID === parseInt(localStorage.getItem('userID'))) {
-            console.log('test');
-            this.setState({
-                ownersMessage: true
-            })
-        }
-    }
-
-    render() {
         const unownedMessage = 
             <li className={classes.message}>
                 <div className={classes.avatar}>
-                    <AvatarChat userID={this.props.userID}/>
+                    <AvatarChat userID={props.userID}/>
                 </div>
                 <div className={classes.bubble}>
-                    <ChatBubble userID={this.props.userID}>
-                        {this.props.children}
+                    <ChatBubble userID={props.userID}>
+                        {props.children}
                     </ChatBubble>
                 </div>
             </li>
         const ownedMessage = 
         <li className={classes.ownerMessage}>
             <div className={classes.bubble}>
-                <ChatBubble userID={this.props.userID}>
-                    {this.props.children}
+                <ChatBubble userID={props.userID}>
+                    {props.children}
                 </ChatBubble>
             </div>
             <div className={classes.avatar}>
-                <AvatarChat userID={this.props.userID} />
+                <AvatarChat userID={props.userID} />
             </div>
         </li>
 
 
         return(
             <>
-                {!this.state.ownersMessage ? unownedMessage : ownedMessage}
+                {!ownersMessage ? unownedMessage : ownedMessage}
             </>
         )
-    }
 }
 export default Message;

@@ -1,29 +1,16 @@
 import classes from './Conversations.module.css';
 import ConversationItem from './Components/ConversationItem';
 import AvatarChat from '../../components/UI/AvatarChat';
+import { useState } from 'react';
 
 const CHATROOMS = [{
-        name: 'Group Chat',
-        userID: 1,
-        chatID: 'e531fge'
-    },
-    {
-        name: 'Willie',
-        userID: 25,
-        chatID: 'j42rss2'
-    },
-    {
-        name: 'Henry',
-        userID: 24,
-        chatID: 'g42eafv'
-    },
-    {
-        name: 'Amy',
-        userID: 23,
-        chatID: 'kae425rw'
-}];
+        name: 'GroupChat',
+        userID:23 ,
+        chatID: '3rfqegvav'
+    }];
 
 const Conversations = props => {
+    // const [roomname, setRoomName] = useState('groupchat');
 
 
     return (
@@ -41,7 +28,7 @@ const Conversations = props => {
 
                     <ul className={classes.list}>
                         {CHATROOMS.map(room => 
-                            (<ConversationItem id={room.userID} key={room.chatID} chatID={room.chatID}>
+                            (<ConversationItem id={room.userID} key={room.chatID} chatID={room.chatID} name={room.name}>
                             {room.name}
                             </ConversationItem>)
                         )}

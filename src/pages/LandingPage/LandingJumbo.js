@@ -20,6 +20,9 @@ const LandingJumbo = props => {
             }
         }, [ctx]);
 
+        const handleRemoveStorage = () => {
+            localStorage.clear();
+        }
 
         return(
         <>
@@ -31,6 +34,8 @@ const LandingJumbo = props => {
                     <Link to={username ? conversationsRoute : newUserRoute}>
                         <Button type="button" styled={'next'}>Start chatting</Button>
                     </Link>
+                        <hr />
+                    <Button type="button" onClick={handleRemoveStorage} styled={'warning'}>Clear Storage</Button>
                 </div>
             </div>
         </>

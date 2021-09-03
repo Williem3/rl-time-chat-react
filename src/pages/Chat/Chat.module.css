@@ -3,7 +3,7 @@
 }
 .header {
     height: 7.5%;
-    @apply flex items-center bg-yellow-500 space-x-2 p-4 sticky top-0 
+    @apply flex items-center bg-yellow-500 space-x-2 p-4 sticky top-0 shadow-md
 }
 
 .headerLeft {
@@ -19,11 +19,27 @@
 
 .chatBody{
     height: 80%;
-    @apply bg-gray-300  w-full pl-4 pr-4 pt-2 
+    @apply bg-gray-300 w-full pl-4 pr-4 pt-2 
 }
 
 .chatList {
     @apply overflow-auto h-full w-full space-y-4 md:flex flex-col items-center
+}
+.chatList::-webkit-scrollbar {
+    width: 0px;
+}
+
+.chatList::-webkit-scrolbar-track {
+    -webkit-box-shadow: none;
+}
+
+.chatList::-webkit-scrollbar-thumb {
+    background: white;
+    -webkit-box-shadow: none;
+}
+
+.chatList::-webkit-scrollbar-thumb:window-inactive {
+    background: white;
 }
 
 .inputSection {

@@ -4,27 +4,26 @@ import Button from '../../components/UI/Button';
 import Avatar from '../../components/UI/Avatar';
 import Container from '../../components/UI/Container';
 import { Link } from 'react-router-dom';
-import  socket from '../../socket';
-import AuthContext from '../../store/auth-context';
-import { useContext, useState } from 'react';
+import {  useState } from 'react';
 
 const SignUp = props => {
-    const ctx = useContext(AuthContext);
     const [username, setUsernameState] = useState('');
-    const userID = localStorage.getItem("userID");
+    const roomname = 'groupchat';
 
     const handleUsernameChanged = async e => {
         setUsernameState(e.target.value);
     }
 
-
-
-    const onNewAuthentication = () => {
-        socket.auth = { username };
-        // socket.connect();
-        socket.io.on("connect", () => {
-            console.log('test');
-        })
+    const sendData = () => {
+        if (username !== '') {
+            props.socket.auth = { username }
+            props.socket.emit("joinRoom", { username, roomname });
+            console.log(props.socket.id);
+            localStorage.setItem('username', username);
+        } else {
+            alert("username is a must!");
+            window.location.reload();
+        }
     }
 
     return (
@@ -39,7 +38,7 @@ const SignUp = props => {
                 </div>
                 <div className={classes.button}>
                     <Link to='/conversations'>
-                        <Button type="button" onClick={onNewAuthentication} styled={'next'}>Join chat</Button>
+                        <Button type="button" onClick={sendData} styled={'next'}>Join chat</Button>
                     </Link>
                 </div>
             </Container>
